@@ -103,7 +103,7 @@ def cnnthree(
             plt.legend()
             plt.show()
     else:
-        if input_shape == 92:
+        if input_shape == np.cumprod(input_shape)[-1]:
             cnn3 = tf.keras.models.load_model(
                 flpath+'saved_model_4x23/cnn3_4x23'
             )
@@ -175,7 +175,7 @@ def cnnfive(
             plt.legend()
             plt.show()
     else:
-        if input_shape == 92:
+        if input_shape == np.cumprod(input_shape)[-1]:
             cnn5 = tf.keras.models.load_model(
                 flpath+'saved_model_4x23/cnn5_4x23'
             )
@@ -252,7 +252,7 @@ def cnnten(
             plt.legend()
             plt.show()
     else:
-        if input_shape == 92:
+        if input_shape == np.cumprod(input_shape)[-1]:
             cnn10 = tf.keras.models.load_model(
                 flpath+'saved_model_4x23/cnn10_4x23'
             )
@@ -320,7 +320,7 @@ def cnnlin(
             plt.legend()
             plt.show()
     else:
-        if input_shape == 92:
+        if input_shape == np.cumprod(input_shape)[-1]:
             cnnlin = tf.keras.models.load_model(
                 flpath+'saved_model_4x23/cnnlinn_4x23'
             )
