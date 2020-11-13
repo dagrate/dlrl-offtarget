@@ -25,8 +25,8 @@ p = print
 #
 #
 def importData(flpath='', encoding='8x23', sim='crispor', tl=False):
-	if encoding is '4x23':
-		if sim is 'crispor':
+	if encoding == '4x23':
+		if sim == 'crispor':
 			data = pkl.load(
 				open(flpath+'encoded4x23withoutTsai.pkl','rb'),
 				encoding='latin1'
@@ -37,7 +37,7 @@ def importData(flpath='', encoding='8x23', sim='crispor', tl=False):
 				encoding='latin1'
 			)
 	else:
-		if sim is 'crispor':
+		if sim == 'crispor':
 			if tl is False:
 				data = pkl.load(
 					open(flpath+'encoded8x23withoutTsai.pkl','rb'),
@@ -136,12 +136,14 @@ def plotRocCurve(
 	for estimator in estimators:
 		if len(ytests[indx].shape) == 2:
 			fprs, tprs, _ = roc_curve(
-			ytests[indx][:,icol],
-			estimator.predict(xtests[indx])[:,icol])
+				ytests[indx][:,icol],
+				estimator.predict(xtests[indx])[:,icol]
+			)
 		else:
 			fprs, tprs, _ = roc_curve(
-			ytests[indx],
-			estimator.predict_proba(xtests[indx])[:,icol])
+				ytests[indx],
+				estimator.predict_proba(xtests[indx])[:,icol]
+			)
 		#
 		plt.plot(
 			fprs, tprs,
