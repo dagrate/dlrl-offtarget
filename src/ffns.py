@@ -3,6 +3,8 @@
 Version |Date |   Author|   Comment
 -----------------------------------------------
 0.0 | 31 Oct 2020 | J. Charlier | initial version
+0.1 | 11 Nov 2020 | J. Charlier | bug update for 8x23 encoding
+0.2 | 12 Nov 2020 | J. Charlier | bug fix
 ===============================================
 """
 #
@@ -20,6 +22,7 @@ from tensorflow.python.keras.layers import (
 )
 import matplotlib.pyplot as plt
 p = print
+flpath = ''
 #
 #
 def transformImages(
@@ -54,7 +57,8 @@ def ffnthree(
         input_shape, num_classes,
         batch_size, epochs,
         callbacks,
-        ismodelsaved=False):
+        ismodelsaved=False,
+        tl=False):
     if ismodelsaved == False:
         # model definition
         ffn3 = Sequential()
@@ -101,9 +105,19 @@ def ffnthree(
             plt.legend()
             plt.show()
     else:
-        ffn3 = tf.keras.models.load_model(
-            'drive/My Drive/crispor/models/saved_model_4x23/ffn3_4x23'
-        )
+        if input_shape == 92:
+            ffn3 = tf.keras.models.load_model(
+                flpath+'saved_model_4x23/ffn3_4x23'
+            )
+        else:
+            if tl:
+                ffn3 = tf.keras.models.load_model(
+                    flpath+'saved_model_guideseq_8x23/ffn3_8x23'
+                )
+            else:
+                ffn3 = tf.keras.models.load_model(
+                    flpath+'saved_model_crispr_8x23/ffn3crispr_8x23'
+                )
     p("FFN3: Done")
     return ffn3
 #
@@ -114,7 +128,8 @@ def ffnfive(
         input_shape, num_classes,
         batch_size, epochs,
         callbacks,
-        ismodelsaved=False):
+        ismodelsaved=False,
+        tl=False):
     if ismodelsaved == False:
         # model definition
         ffn = Sequential()
@@ -164,9 +179,19 @@ def ffnfive(
             plt.legend()
             plt.show()
     else:
-        ffn = tf.keras.models.load_model(
-            'drive/My Drive/crispor/models/saved_model_4x23/ffn5_4x23'
-        )
+        if input_shape == 92:
+            ffn = tf.keras.models.load_model(
+                flpath+'saved_model_4x23/ffn5_4x23'
+            )
+        else:
+            if tl:
+                ffn = tf.keras.models.load_model(
+                    flpath+'saved_model_guideseq_8x23/ffn5_8x23'
+                )
+            else:
+                ffn = tf.keras.models.load_model(
+                    flpath+'saved_model_crispr_8x23/ffn5crispr_8x23'
+                )
     p("FFN5: Done")
     return ffn
 #
@@ -177,7 +202,8 @@ def ffnten(
         input_shape, num_classes,
         batch_size, epochs,
         callbacks,
-        ismodelsaved=False):
+        ismodelsaved=False,
+        tl=False):
     if ismodelsaved == False:
         # model definition
         ffn10 = Sequential()
@@ -237,9 +263,19 @@ def ffnten(
             plt.legend()
             plt.show()
     else:
-        ffn10 = tf.keras.models.load_model(
-            'drive/My Drive/crispor/models/saved_model_4x23/ffn10_4x23'
-        )
+        if input_shape == 92:
+            ffn10 = tf.keras.models.load_model(
+                flpath+'saved_model_4x23/ffn10_4x23'
+            )
+        else:
+            if tl:
+                ffn10 = tf.keras.models.load_model(
+                    flpath+'saved_model_guideseq_8x23/ffn10_8x23'
+                )
+            else:
+                ffn10 = tf.keras.models.load_model(
+                    flpath+'saved_model_crispr_8x23/ffn10crispr_8x23'
+                )
     p("FFN10: Done")
     return ffn10
 #

@@ -3,6 +3,7 @@
 Version |Date |   Author|   Comment
 -----------------------------------------------
 0.0 | 31 Oct 2020 | J. Charlier | initial version
+0.1 | 11 Nov 2020 | J. Charlier | bug update for 8x23 encoding
 ===============================================
 """
 #
@@ -19,6 +20,7 @@ from tensorflow.python.keras.layers import (
     Dense, Dropout, Flatten, Input)
 import matplotlib.pyplot as plt
 p = print
+flpath = ''
 #
 #
 def transformImages(
@@ -54,7 +56,8 @@ def cnnthree(
         input_shape, num_classes,
         batch_size, epochs,
         callbacks,
-        ismodelsaved=False):
+        ismodelsaved=False,
+        tl=False):
     if ismodelsaved == False:
         cnn3 = Sequential()
         cnn3.add(
@@ -100,9 +103,19 @@ def cnnthree(
             plt.legend()
             plt.show()
     else:
-        cnn3 = tf.keras.models.load_model(
-            'drive/My Drive/crispor/models/saved_model_4x23/cnn3_4x23'
-        )
+        if input_shape == 92:
+            cnn3 = tf.keras.models.load_model(
+                flpath+'saved_model_4x23/cnn3_4x23'
+            )
+        else:
+            if tl:
+                cnn3 = tf.keras.models.load_model(
+                    flpath+'saved_model_guideseq_8x23/cnn3_8x23'
+                )
+            else:
+                cnn3 = tf.keras.models.load_model(
+                    flpath+'saved_model_crispr_8x23/cnn3crispr_8x23'
+                )
     p("CNN3: Done")
     return cnn3
 #
@@ -113,7 +126,8 @@ def cnnfive(
         input_shape, num_classes,
         batch_size, epochs,
         callbacks,
-        ismodelsaved=False):
+        ismodelsaved=False,
+        tl=False):
     if ismodelsaved == False:
         # model definition
         cnn5 = Sequential()
@@ -161,9 +175,19 @@ def cnnfive(
             plt.legend()
             plt.show()
     else:
-        cnn5 = tf.keras.models.load_model(
-            'drive/My Drive/crispor/models/saved_model_4x23/cnn5_4x23'
-        )
+        if input_shape == 92:
+            cnn5 = tf.keras.models.load_model(
+                flpath+'saved_model_4x23/cnn5_4x23'
+            )
+        else:
+            if tl:
+                cnn5 = tf.keras.models.load_model(
+                    flpath+'saved_model_guideseq_8x23/cnn5_8x23'
+                )
+            else:
+                cnn5 = tf.keras.models.load_model(
+                    flpath+'saved_model_crispr_8x23/cnn5crispr_8x23'
+                )
     p("CNN5: Done")
     return cnn5
 #
@@ -174,7 +198,8 @@ def cnnten(
         input_shape, num_classes,
         batch_size, epochs,
         callbacks,
-        ismodelsaved=False):
+        ismodelsaved=False,
+        tl=False):
     if ismodelsaved == False:
         # model definition
         cnn10 = Sequential()
@@ -227,9 +252,19 @@ def cnnten(
             plt.legend()
             plt.show()
     else:
-        cnn10 = tf.keras.models.load_model(
-            'drive/My Drive/crispor/models/saved_model_4x23/cnn10_4x23'
-        )
+        if input_shape == 92:
+            cnn10 = tf.keras.models.load_model(
+                flpath+'saved_model_4x23/cnn10_4x23'
+            )
+        else:
+            if tl:
+                cnn10 = tf.keras.models.load_model(
+                    flpath+'saved_model_guideseq_8x23/cnn10_8x23'
+                )
+            else:
+                cnn10 = tf.keras.models.load_model(
+                   flpath+'saved_model_crispr_8x23/cnn10crispr_8x23'
+                )
     p("CNN10: Done")
     return cnn10
 #
@@ -240,7 +275,8 @@ def cnnlin(
         input_shape, num_classes,
         batch_size, epochs,
         callbacks,
-        ismodelsaved=False):
+        ismodelsaved=False,
+        tl=False):
     if ismodelsaved == False:
         inputs = Input(shape=input_shape, name='main_input')
         conv_1 = Conv2D(10, (1,1), padding='same', activation='relu')(inputs)
@@ -284,9 +320,19 @@ def cnnlin(
             plt.legend()
             plt.show()
     else:
-        cnnlin = tf.keras.models.load_model(
-            'drive/My Drive/crispor/models/saved_model_4x23/cnnlinn_4x23'
-        )
+        if input_shape == 92:
+            cnnlin = tf.keras.models.load_model(
+                flpath+'saved_model_4x23/cnnlinn_4x23'
+            )
+        else:
+            if tl:
+                cnnlin = tf.keras.models.load_model(
+                    flpath+'saved_model_guideseq_8x23/cnnlinn_8x23'
+                )
+            else:
+                cnnlin = tf.keras.models.load_model(
+                    flpath+'saved_model_crispr_8x23/cnnlinncrispr_8x23'
+                )
     p("CNN Lin: Done")
     return cnnlin
 #
