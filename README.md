@@ -1,6 +1,6 @@
 # dlrl-offtarget
 
-Deep Learning and Reinforcement Learnign for off-target predictions <br>
+Deep Learning and Reinforcement Learning for off-target predictions <br>
 
 Code Description: <br>
 - *data/offtarget_createdataset.py* -> create the Bunch of the crispor data used for the experiments
