@@ -8,6 +8,7 @@ Version |Date |   Author|   Comment
 """
 #
 #
+import numpy as np
 import tensorflow as tf
 from keras.utils import to_categorical
 import tensorflow.python.keras as tfkeras
@@ -103,7 +104,7 @@ def cnnthree(
             plt.legend()
             plt.show()
     else:
-        if input_shape == np.cumprod(input_shape)[-1]:
+        if np.cumprod(input_shape)[-1] == 92:
             cnn3 = tf.keras.models.load_model(
                 flpath+'saved_model_4x23/cnn3_4x23'
             )
@@ -175,7 +176,7 @@ def cnnfive(
             plt.legend()
             plt.show()
     else:
-        if input_shape == np.cumprod(input_shape)[-1]:
+        if np.cumprod(input_shape)[-1] == 92:
             cnn5 = tf.keras.models.load_model(
                 flpath+'saved_model_4x23/cnn5_4x23'
             )
@@ -252,7 +253,7 @@ def cnnten(
             plt.legend()
             plt.show()
     else:
-        if input_shape == np.cumprod(input_shape)[-1]:
+        if np.cumprod(input_shape)[-1] == 92:
             cnn10 = tf.keras.models.load_model(
                 flpath+'saved_model_4x23/cnn10_4x23'
             )
@@ -320,7 +321,7 @@ def cnnlin(
             plt.legend()
             plt.show()
     else:
-        if input_shape == np.cumprod(input_shape)[-1]:
+        if np.cumprod(input_shape)[-1] == 92:
             cnnlin = tf.keras.models.load_model(
                 flpath+'saved_model_4x23/cnnlinn_4x23'
             )
