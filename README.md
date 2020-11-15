@@ -13,6 +13,12 @@ Saved Models: <br>
 Notebooks: <br>
 - *notebooks/* -> notebook to used to run the experiments with "4x23" encoding and "8x23" encoding
 
+Python Files: <br>
+- *src/cnns.py* -> cnns implementation
+- *src/fnns.py* -> ffns implementation
+- *src/mltrees.py* -> random forest implementation
+- *src/utilities.py* -> set of python functions to preprocess the data and postprocess the results of the experiments
+
 ## Reference Papers
 
 ```bibtex
