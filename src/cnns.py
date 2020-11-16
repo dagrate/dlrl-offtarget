@@ -106,16 +106,16 @@ def cnnthree(
     else:
         if np.cumprod(input_shape)[-1] == 92:
             cnn3 = tf.keras.models.load_model(
-                flpath+'saved_model_4x23/cnn3_4x23'
+                flpath+'/saved_model_4x23/cnn3_4x23'
             )
         else:
             if tl:
                 cnn3 = tf.keras.models.load_model(
-                    flpath+'saved_model_guideseq_8x23/cnn3_8x23'
+                    flpath+'/saved_model_guideseq_8x23/cnn3_8x23'
                 )
             else:
                 cnn3 = tf.keras.models.load_model(
-                    flpath+'saved_model_crispr_8x23/cnn3crispr_8x23'
+                    flpath+'/saved_model_crispr_8x23/cnn3crispr_8x23'
                 )
     p("CNN3: Done")
     return cnn3
@@ -178,16 +178,16 @@ def cnnfive(
     else:
         if np.cumprod(input_shape)[-1] == 92:
             cnn5 = tf.keras.models.load_model(
-                flpath+'saved_model_4x23/cnn5_4x23'
+                flpath+'/saved_model_4x23/cnn5_4x23'
             )
         else:
             if tl:
                 cnn5 = tf.keras.models.load_model(
-                    flpath+'saved_model_guideseq_8x23/cnn5_8x23'
+                    flpath+'/saved_model_guideseq_8x23/cnn5_8x23'
                 )
             else:
                 cnn5 = tf.keras.models.load_model(
-                    flpath+'saved_model_crispr_8x23/cnn5crispr_8x23'
+                    flpath+'/saved_model_crispr_8x23/cnn5crispr_8x23'
                 )
     p("CNN5: Done")
     return cnn5
@@ -255,16 +255,16 @@ def cnnten(
     else:
         if np.cumprod(input_shape)[-1] == 92:
             cnn10 = tf.keras.models.load_model(
-                flpath+'saved_model_4x23/cnn10_4x23'
+                flpath+'/saved_model_4x23/cnn10_4x23'
             )
         else:
             if tl:
                 cnn10 = tf.keras.models.load_model(
-                    flpath+'saved_model_guideseq_8x23/cnn10_8x23'
+                    flpath+'/saved_model_guideseq_8x23/cnn10_8x23'
                 )
             else:
                 cnn10 = tf.keras.models.load_model(
-                   flpath+'saved_model_crispr_8x23/cnn10crispr_8x23'
+                   flpath+'/saved_model_crispr_8x23/cnn10crispr_8x23'
                 )
     p("CNN10: Done")
     return cnn10
@@ -323,16 +323,16 @@ def cnnlin(
     else:
         if np.cumprod(input_shape)[-1] == 92:
             cnnlin = tf.keras.models.load_model(
-                flpath+'saved_model_4x23/cnnlinn_4x23'
+                flpath+'/saved_model_4x23/cnnlinn_4x23'
             )
         else:
             if tl:
                 cnnlin = tf.keras.models.load_model(
-                    flpath+'saved_model_guideseq_8x23/cnnlinn_8x23'
+                    flpath+'/saved_model_guideseq_8x23/cnnlinn_8x23'
                 )
             else:
                 cnnlin = tf.keras.models.load_model(
-                    flpath+'saved_model_crispr_8x23/cnnlinncrispr_8x23'
+                    flpath+'/saved_model_crispr_8x23/cnnlinncrispr_8x23'
                 )
     p("CNN Lin: Done")
     return cnnlin
